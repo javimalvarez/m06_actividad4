@@ -2,19 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/estilos.css">
+    <title>Linkia FP</title>
 </head>
 <body>
-    <form id="miFormulario">
-        <label for="objeto">Objeto:</label>
-        <input type="text" id="objeto" name="objeto">
-        <label for="color">Color:</label>
-        <input type="text" id="color" name="color">
-        <input type="submit" id="enviar" value="enviar">
-    </form>
-    <div id="lista_objetos"></div>
-    <script src="index.js"></script>
+    <header>
+        <div class="contenedor_encabezado">
+            <img class="logo" src="img/logo.png"
+                alt="logo" title="logo">
+        </div>
+    </header>
+    <main>
+        <div class="contenedor_formulario">
+            <form>
+                <legend>Acceso al sistema de gestión de alumnos del Centro de estudios informáticos Picos de Europa</legend><br>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" max="70">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="18" max="99"><br>
+                <label for="curso">Curso:</label>
+                <select id="curso" name="curso">
+                    <optgroup label="ASIR">
+                        <option value="1º ASIR">1º ASIR</option>
+                        <option value="2º ASIR">2º ASIR</option>
+                    </optgroup>
+                    <optgroup label="DAW">
+                        <option value="1º DAW">1º DAW</option>
+                        <option value="2º DAW">2º DAW</option>
+                    </optgroup>
+                    <optgroup label="DAW">
+                        <option value="1º DAM">1º DAM</option>
+                        <option value="2º DAM">2º DAM</option>
+                    </optgroup>
+                </select>
+            </form>
+        </div>
+        <div class="contenedor_alumnos">
+            <table>
+                <tr><th>Alumnos:</th></tr>
+                <tr><td><ul id="lista_alumnos">
+                </ul></td></tr>
+            </table>
+        </div>
+        <div class="contenedor_botones">
+            <button class="button" id="enviar">Añadir alumno</button>
+            <button class="button" id="eliminar">Eliminar</button><br>
+        </div>
+    </main>
+    <footer>
+        <div>
+            © Centro de estudios informáticos Picos de Europa<br>
+            Desarrollo de Aplicaciones Web | Linkia FP<br>
+            Noviembre 2023 - Autor: Francisco Javier Martínez Álvarez<br>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
