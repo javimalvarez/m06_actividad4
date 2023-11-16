@@ -48,6 +48,10 @@ form{
     margin: 2px;
     padding: 2px;
  }
+ /*Botón eliminar estará oculto por defecto JavaScript se encargará de mostrar el botón en su caso*/
+ #eliminar{
+    visibility: hidden;
+ }
 .contenedor_botones{
     display: flex;
     justify-content: center;
