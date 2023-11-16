@@ -13,7 +13,7 @@ function agregarAlumno() {
     lista_alumnos.appendChild(elemento_lista);
     /*Incluye el contenido almacenado en la variable alumno dentro de elemento_lista 
     para mostrar la información en la página web*/
-    elemento_lista.innerHTML = alumno;
+    elemento_lista.textContent = alumno;
     //Se llama a la función navegarElementos que va actuar sobre los elementos creados
     navegarElementos();
 }
@@ -21,8 +21,13 @@ function agregarAlumno() {
 function eliminarAlumno() {
     document.querySelector('li').remove();
 }
+//Esta función mostrará el botón eliminar solo cuando haya alumnos creados y este no este visible
+function mostrarEliminar(){
+     document.getElementById('eliminar').style.visibility="visible";
+ }
 
-document.getElementById('enviar').addEventListener("click", agregarAlumno);
+//El botón enviar va a ejecutar 2 funciones por un lado va a agregar el alumno y va a mostrar el botón eliminar si no se muestra
+document.getElementById('enviar').addEventListener("click", function(){agregarAlumno(); mostrarEliminar();});
 document.getElementById('eliminar').addEventListener("click", eliminarAlumno);
 
 function navegarElementos() {
